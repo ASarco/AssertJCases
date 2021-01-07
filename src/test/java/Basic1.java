@@ -1,5 +1,4 @@
 import org.assertj.Crew;
-import org.assertj.Rank;
 import org.assertj.Ship;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.MatcherAssert;
@@ -8,10 +7,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.*;
+import java.time.LocalDate;
 import java.util.List;
 
-import static org.assertj.Rank.*;
+import static org.assertj.Rank.CAPTAIN;
+import static org.assertj.Rank.COMMANDER;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class Basic1 {
@@ -22,7 +22,7 @@ public class Basic1 {
     @BeforeEach
     public void setUp() {
         crew = List.of(new Crew("James T. Kirk", CAPTAIN), new Crew("Spock", COMMANDER));
-        ship = new Ship("USS Enterprise", "NCC-1701", null,  crew);
+        ship = new Ship("USS Enterprise", "NCC-1701", LocalDate.of(2245, 4, 11),  crew);
     }
 
 
